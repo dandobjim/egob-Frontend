@@ -5,7 +5,10 @@ import CONSTANTS from "../shared/Constants";
 
 const SideBar = ({marcadores}) => {
 
+  const [dropDownValue, setDropDownValue] = useState("Selecciona una consulta");
   const [event, setEvent] = useState();
+  
+  
   
   const dni_onclick = () => {
     axios.get(`${CONSTANTS.API.url}/api/v2/virtuoso/create_id`).then(
@@ -20,6 +23,7 @@ const SideBar = ({marcadores}) => {
     console.log(event);
     if(event === "1"){
       dni_onclick();
+      
     }else{
       alert("Esto es sólo de ejemplo, por favot use elegir DNI");
     }
@@ -27,6 +31,13 @@ const SideBar = ({marcadores}) => {
 
   const handleSelect = (e) =>{
     setEvent(e);
+    if(e === "1"){
+      setDropDownValue("DNI")
+    }else if(e === "2"){
+      setDropDownValue("Another action")
+    }else{
+      setDropDownValue("Something else here")
+    }
   }
 
   return (
@@ -41,7 +52,7 @@ const SideBar = ({marcadores}) => {
         </p>
         <ul className="list-group list-group-flush">
           <li className="list-group-item">
-            <DropdownButton onSelect = {handleSelect} size="sm" variant="secondary" title="CONSULTAS">
+            <DropdownButton onSelect = {handleSelect} size="sm" variant="secondary" title={dropDownValue}>
               <Dropdown.Item eventKey="1">DNI</Dropdown.Item>
               <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
               <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
