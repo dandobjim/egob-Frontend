@@ -13,7 +13,8 @@ npm i
 Run the development server:
 
 ```bash
-npm start
+docker build -t egob .
+docker run -it -p 80:3000 egob
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
