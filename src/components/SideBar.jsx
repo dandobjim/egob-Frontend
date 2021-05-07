@@ -20,7 +20,6 @@ const SideBar = ({marcadores}) => {
   }
 
   const selectConsult = () => {
-    console.log(event);
     if(event === "1"){
       dni_onclick();
       
