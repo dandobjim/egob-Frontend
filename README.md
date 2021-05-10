@@ -4,8 +4,7 @@ This is a [React](https://es.reactjs.org/) project bootstrapped with [`react-boo
 Run the development server:
 
 ```bash
-docker build -t egob .
-docker run -it -p 80:3000 egob
+docker-compose up
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
