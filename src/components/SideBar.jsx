@@ -11,7 +11,7 @@ const SideBar = ({marcadores}) => {
   
   
   const dni_onclick = () => {
-    axios.get(`${CONSTANTS.API.url}/api/v2/virtuoso/create_id`).then(
+    axios.get(`${CONSTANTS.API.url}/virtuoso/create_id`).then(
       res => {
         marcadores(res["data"])
       }
