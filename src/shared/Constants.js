@@ -1,6 +1,6 @@
 const CONSTANTS = {
     API:{
-        url:"http://khaos.uma.es/egob/api",
+        url:"/egob/api",
     },
 };
 
